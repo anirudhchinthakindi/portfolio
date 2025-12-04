@@ -98,7 +98,7 @@ export const resumeData = {
                     role: "Treasurer",
                     organization: "UVA International Relations Organization",
                     date: "Dec 2025 - Present",
-                    details: "Manage budgeting, reimbursement, and financial planning for a 200+ member nonprofit; oversee allocation of funds for conferences, programming, and organizational operations; maintain transparent financial records and ensure compliance with university and nonprofit guidelines. \n Coordinate fundraising initiatives and reimbursements; maintain accurate financial records and support executive leadership in long-term organizational budgeting and strategy."
+                    details: "Manage budgeting, reimbursement, and financial planning for a 200+ member nonprofit with $100k+ annual budget; oversee allocation of funds for conferences, programming, and organizational operations; maintain transparent financial records and ensure compliance with university and nonprofit guidelines. \n Coordinate fundraising initiatives and reimbursements; maintain accurate financial records and support executive leadership in long-term organizational budgeting and strategy."
                 },
                 {
                     role: "Director-General",
