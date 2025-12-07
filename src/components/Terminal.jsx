@@ -62,6 +62,11 @@ Type 'help' to see available commands. Type 'gui' to switch to the main website.
                             return `[${item.date}] ${item.role} @ ${item.organization}\n  ${item.details}`;
                         }).join('\n\n')
                     },
+                    'volunteering.txt': {
+                        type: 'file', content: resumeData.volunteering.map(role =>
+                            `[${role.date}] ${role.role} @ ${role.organization}\n  ${role.details}`
+                        ).join('\n\n')
+                    },
                     'work.txt': {
                         type: 'file', content: resumeData.work.map(job =>
                             `[${job.date}] ${job.role} @ ${job.organization}\n  ${job.details}`

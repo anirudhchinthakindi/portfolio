@@ -55,6 +55,7 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                     <a href="#research" className={activeSection === 'research' ? 'active' : ''}>Research</a>
                     <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a>
                     <a href="#leadership" className={activeSection === 'leadership' ? 'active' : ''}>Leadership</a>
+                    <a href="#volunteering" className={activeSection === 'volunteering' ? 'active' : ''}>Volunteering</a>
                     <a href="#work" className={activeSection === 'work' ? 'active' : ''}>Work</a>
                     <a href="#awards" className={activeSection === 'awards' ? 'active' : ''}>Awards</a>
                     <button className={activeSection === 'gallery-preview' ? 'nav-btn active' : 'nav-btn'} onClick={onSwitchToGallery}>Gallery</button>
@@ -164,8 +165,14 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                                 )}
                             </div>
                         ))}
+                    </div>
+                </section>
+
+                <section id="volunteering" className="gui-section">
+                    <h2 className="section-title">Volunteering</h2>
+                    <div className="grid-col-1">
                         {resumeData.volunteering.map((role, index) => (
-                            <div key={index + 'vol'} className="card">
+                            <div key={index} className="card">
                                 <div className="card-header">
                                     <h3>{role.role}</h3>
                                     <span className="date">{role.date}</span>
