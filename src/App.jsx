@@ -6,10 +6,10 @@ import Gallery from './components/Gallery';
 
 function App() {
     const [view, setView] = useState('intro'); // 'intro', 'terminal', 'gui', 'gallery'
-    const [lastView, setLastView] = useState('gui'); // To return from gallery
+    const [lastView, setLastView] = useState('terminal'); // To return from gallery
 
     const handleIntroComplete = () => {
-        setView('gui'); // Default to GUI as requested
+        setView('terminal'); // Default to Terminal
     };
 
     const switchToTerminal = () => {

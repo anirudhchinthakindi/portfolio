@@ -144,7 +144,6 @@ export const resumeData = {
             date: "Sep 2025 - Present",
             details: "Positively impact patient experience by providing companionship to patients, reviewing hospital resources, and assisting staff via receptionist/clerical duties at nurses' station."
         },
-        /*
         {
             role: "Founder/Tutor",
             organization: "Chinthakindi STEM Tutoring",
@@ -152,7 +151,6 @@ export const resumeData = {
             date: "2021 - 2025",
             details: "Developed and led a free STEM tutoring program for 7 underserved middle school students. Conducted 70+ sessions and improved students' STEM grades by an average of 12% over 4 semesters."
         },
-        */
         {
             role: "Volunteer",
             organization: "Dementia Art Therapy Alliance @ The Colonades",
