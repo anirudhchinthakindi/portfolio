@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Intro from './components/Intro';
 import Terminal from './components/Terminal';
 import GUI from './components/GUI';
@@ -68,6 +69,7 @@ function App() {
                     initialTargetId={galleryTargetId}
                 />
             )}
+            <Analytics />
         </div>
     );
 }
