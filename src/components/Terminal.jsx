@@ -16,7 +16,7 @@ const Terminal = ({ onSwitchToGUI, onOpenImage, isActive }) => {
 \\_| |_/_| |_|_|_|   \\__,_|\\__,_|_| |_|  \\____/_| |_|_|_| |_|\\__|_| |_|\\__,_|_|\\_\\_|_| |_|\\__,_|_|                                                                
                                                                                                  ` },
         {
-            type: 'welcome', content: `Welcome to Anirudh's Portfolio v18.4.0
+            type: 'welcome', content: `Welcome to Anirudh's Portfolio v18
 Type 'help' to see available commands. Type 'gui' to switch to the main website.`
         }
     ]);

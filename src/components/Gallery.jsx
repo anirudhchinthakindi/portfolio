@@ -24,6 +24,7 @@ const Gallery = ({ onBack, initialTargetId }) => {
                 {resumeData.gallery.map((item, index) => (
                     <div key={index} className="gallery-item" onClick={() => setSelectedImage(item)}>
                         <div className="img-wrapper">
+                            <span className="gallery-date-overlay">{item.date}</span>
                             <img src={item.src} alt={item.title} loading="lazy" />
                         </div>
                         <div className="caption-preview">
@@ -40,6 +41,7 @@ const Gallery = ({ onBack, initialTargetId }) => {
                         <div className="lightbox-content">
                             <img src={selectedImage.src} alt={selectedImage.title} />
                             <div className="lightbox-caption">
+                                <span className="lightbox-date">{selectedImage.date}</span>
                                 <h2>{selectedImage.title}</h2>
                                 <p>{selectedImage.description}</p>
                             </div>

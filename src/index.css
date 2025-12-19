@@ -108,6 +108,50 @@ html {
     margin: 0 0 15px 0;
 }
 
+
+
+.header-content {
+    width: 100%;
+}
+
+.header-info-row {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-text-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.header-buttons .nav-btn {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.gallery-btn {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.gallery-btn:hover {
+    border-color: var(--accent-color);
+    background: rgba(56, 189, 248, 0.1);
+}
+
 .contact-info {
     display: flex;
     gap: 10px;
@@ -129,6 +173,11 @@ html {
     display: flex;
     gap: 20px;
     align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(51, 65, 85, 0.5);
+    overflow-x: auto;
 }
 
 .gui-nav a,
@@ -324,6 +373,21 @@ html {
 .img-wrapper {
     height: 250px;
     overflow: hidden;
+    position: relative;
+}
+
+.gallery-date-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    color: var(--text-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    z-index: 5;
+    font-family: var(--font-mono);
+    border: 1px solid var(--border-color);
 }
 
 .gallery-item img {
@@ -385,6 +449,19 @@ html {
     max-width: 100%;
     max-height: 70vh;
     object-fit: contain;
+}
+
+.lightbox-caption {
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox-date {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
 }
 
 .lightbox-caption h2 {
@@ -576,6 +653,18 @@ html {
 
     .gui-subtitle {
         font-size: 1rem;
+    }
+
+    .header-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .header-buttons {
+        width: 100%;
+        margin-top: 5px;
     }
 
     .gui-header {

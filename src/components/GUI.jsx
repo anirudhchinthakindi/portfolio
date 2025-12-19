@@ -41,13 +41,23 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
             <header className="gui-header">
                 <div className="header-content">
                     <h1 className="gui-title">{resumeData.name}</h1>
-                    <p className="gui-subtitle">Undergraduate Student at the University of Virginia</p>
-                    <div className="contact-info">
-                        <a href={`mailto:${resumeData.contact.email}`}>{resumeData.contact.email}</a>
-                        <span>•</span>
-                        <a href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <span>•</span>
-                        <span>{resumeData.contact.location}</span>
+                    <div className="header-info-row">
+                        <div className="header-text-info">
+                            <p className="gui-subtitle">Undergraduate Student at the University of Virginia</p>
+                            <div className="contact-info">
+                                <a href={`mailto:${resumeData.contact.email}`}>{resumeData.contact.email}</a>
+                                <span>•</span>
+                                <a href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <span>•</span>
+                                <span>{resumeData.contact.location}</span>
+                            </div>
+                        </div>
+                        <div className="header-buttons">
+                            <button className={activeSection === 'gallery-preview' ? 'nav-btn active gallery-btn' : 'nav-btn gallery-btn'} onClick={onSwitchToGallery}>Photo Gallery</button>
+                            <button className="nav-btn terminal-toggle" onClick={onSwitchToTerminal}>
+                                Terminal Mode
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <nav className="gui-nav">
@@ -58,10 +68,6 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                     <a href="#volunteering" className={activeSection === 'volunteering' ? 'active' : ''}>Volunteering</a>
                     <a href="#work" className={activeSection === 'work' ? 'active' : ''}>Work</a>
                     <a href="#awards" className={activeSection === 'awards' ? 'active' : ''}>Awards</a>
-                    <button className={activeSection === 'gallery-preview' ? 'nav-btn active' : 'nav-btn'} onClick={onSwitchToGallery}>Gallery</button>
-                    <button className="nav-btn terminal-toggle" onClick={onSwitchToTerminal}>
-                        Terminal Mode
-                    </button>
                 </nav>
             </header>
 
