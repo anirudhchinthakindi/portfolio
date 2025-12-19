@@ -213,10 +213,16 @@ export const resumeData = {
     ],
     gallery: [
         {
-            id: "Coming-soon",
-            title: "Coming soon",
-            description: "Coming soon...",
-            src: "https://placehold.co/600x400/150150/FFFFFF?text=Coming+soon"
+            id: "neurology-shadow-121525",
+            title: "Shadowing Dr. W Alex Dalrymple MD at the UVA Health Neurology Clinic",
+            description: "Over 14 hours across two sessions (December 9 and 15, 2025) in the last week, I had the opportunity to shadow Dr. Dalrymple in his outpatient neurology practice at UVA Health PCC. I observed patient consultations ranging from complex diagnostic cases to longitudinal care of Parkinson's Disease patients, learning how neurologists balance diagnostic reasoning with building meaningful patient relationships. Dr. Dalrymple's approach to patient care (taking time to coordinate with families, explaining treatment rationale, and emphasizing lifestyle interventions like aerobic exercise alongside medical management) strengthened my own interest in specialties that have both intellectual challenges and the opportunity for longitudinal care. This experience made me appreciate neurology a bit more, and see it in its unique combo of clinical mystery-solving and long-term patient partnership.",
+            src: "src/assets/gallery/neurologyShadow121525.jpeg"
+        },
+        {
+            id: "DATA-volunteer-120725",
+            title: "Painting Chrstimas-Themed Artwork with Dementia Art Therapy Alliance",
+            description: "My first time volunteering with DATA. I worked with a resident to paint a Christmas tree and presents, on a blank canvas, and it was a pretty cool experience. She could talk vividly about her past (attending basketball games back in Lynchburg) but moments later would struggle to find the green paint or describe what she wanted to paint next. It was pretty eye-opening to see how dementia affects people unevenly, and how art can still create space for connection and expression even when communication becomes difficult.",
+            src: "src/assets/gallery/data120725.jpeg"
         }
     ]
 };

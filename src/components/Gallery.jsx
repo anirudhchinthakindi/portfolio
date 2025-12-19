@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { resumeData } from '../data/resume';
 
-const Gallery = ({ onBack }) => {
+const Gallery = ({ onBack, initialTargetId }) => {
     const [selectedImage, setSelectedImage] = useState(null);
+
+    useEffect(() => {
+        if (initialTargetId) {
+            const target = resumeData.gallery.find(item => item.id === initialTargetId);
+            if (target) {
+                setSelectedImage(target);
+            }
+        }
+    }, [initialTargetId]);
 
     return (
         <div className="gallery-page professional-theme">
@@ -26,12 +35,14 @@ const Gallery = ({ onBack }) => {
 
             {selectedImage && (
                 <div className="lightbox" onClick={() => setSelectedImage(null)}>
-                    <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+                    <div className="lightbox-wrapper" onClick={e => e.stopPropagation()}>
                         <button className="close-btn" onClick={() => setSelectedImage(null)}>×</button>
-                        <img src={selectedImage.src} alt={selectedImage.title} />
-                        <div className="lightbox-caption">
-                            <h2>{selectedImage.title}</h2>
-                            <p>{selectedImage.description}</p>
+                        <div className="lightbox-content">
+                            <img src={selectedImage.src} alt={selectedImage.title} />
+                            <div className="lightbox-caption">
+                                <h2>{selectedImage.title}</h2>
+                                <p>{selectedImage.description}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

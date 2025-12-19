@@ -362,16 +362,23 @@ html {
     padding: 40px;
 }
 
-.lightbox-content {
+.lightbox-wrapper {
+    position: relative;
     max-width: 90%;
     max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox-content {
     background: var(--bg-color);
     padding: 20px;
     border-radius: 8px;
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow-y: auto;
+    /* Enable scrolling for long description */
 }
 
 .lightbox-content img {
@@ -449,6 +456,13 @@ html {
     z-index: 10;
 }
 
+.input-area {
+    display: flex;
+    align-items: flex-start;
+    /* Align prompt to top of multiline input */
+    width: 100%;
+}
+
 .terminal-input {
     color: var(--text-primary);
     caret-color: var(--accent-color);
@@ -460,6 +474,13 @@ html {
     flex-grow: 1;
     padding: 0;
     margin: 0;
+    resize: none;
+    /* Disable manual resize handle */
+    overflow: hidden;
+    /* Hide scrollbar */
+    min-height: 1.4em;
+    /* Match line-height */
+    line-height: 1.4;
 }
 
 .gui-footer {

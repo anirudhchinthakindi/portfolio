@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Output from './Output';
 import { resumeData } from '../data/resume';
 
-const Terminal = ({ onSwitchToGUI }) => {
+const Terminal = ({ onSwitchToGUI, onOpenImage, isActive }) => {
     const [input, setInput] = useState('');
     const [currentPath, setCurrentPath] = useState(['~']);
     const [output, setOutput] = useState([
@@ -85,9 +85,9 @@ Type 'help' to see available commands. Type 'gui' to switch to the main website.
             'gallery': {
                 type: 'dir',
                 children: resumeData.gallery.reduce((acc, item) => {
-                    acc[`${item.id}.txt`] = {
+                    acc[`${item.id}.jpg`] = {
                         type: 'file',
-                        content: `[IMAGE] ${item.title}\n${item.description}\n\n(Type "gui" to view image)`
+                        content: `[IMAGE] ${item.title}\n${item.description}\n\n(Type "open ${item.id}.jpg" to view image)`
                     };
                     return acc;
                 }, {})
@@ -96,10 +96,10 @@ Type 'help' to see available commands. Type 'gui' to switch to the main website.
     };
 
     useEffect(() => {
-        if (inputRef.current) {
+        if (isActive && inputRef.current) {
             inputRef.current.focus();
         }
-    }, []);
+    }, [isActive]);
 
     useEffect(() => {
         if (justCleared) {
@@ -145,6 +145,7 @@ Type 'help' to see available commands. Type 'gui' to switch to the main website.
                     type: 'text', content: `ls          - List directory contents
 cd <dir>    - Change directory
 cat <file>  - View file content
+open <file> - Open image in GUI
 gui         - Switch to GUI mode
 clear       - Clear terminal
 help        - Show this help message`
@@ -184,7 +185,26 @@ help        - Show this help message`
                 break;
             case 'gui':
                 newOutput.push({ type: 'text', content: 'Switching to GUI mode...' });
-                setTimeout(onSwitchToGUI, 250);
+                setTimeout(onSwitchToGUI, 200);
+                break;
+            case 'open':
+                if (args.length === 0) {
+                    newOutput.push({ type: 'error', content: 'open: missing operand' });
+                } else {
+                    const targetFile = args[0];
+                    const file = (currentDir.children || currentDir)[targetFile];
+                    if (file) {
+                        if (targetFile.endsWith('.jpg')) {
+                            const imageId = targetFile.replace('.jpg', '');
+                            newOutput.push({ type: 'text', content: `Opening ${targetFile}...` });
+                            setTimeout(() => onOpenImage(imageId), 100);
+                        } else {
+                            newOutput.push({ type: 'error', content: `open: ${targetFile}: Not an image file` });
+                        }
+                    } else {
+                        newOutput.push({ type: 'error', content: `open: ${targetFile}: No such file` });
+                    }
+                }
                 break;
             case 'clear':
                 // Show the command, then flag that we just cleared
@@ -272,14 +292,29 @@ help        - Show this help message`
             <Output output={output} />
             <div className="input-area">
                 <span className="prompt-label">{prompt}</span>
-                <input
+                <textarea
                     ref={inputRef}
-                    type="text"
                     className="terminal-input"
                     value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleKeyDown}
+                    onChange={(e) => {
+                        setInput(e.target.value);
+                        e.target.style.height = 'auto'; // Reset height to recalculate
+                        e.target.style.height = e.target.scrollHeight + 'px'; // Set to scrollHeight
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            handleCommand(input);
+                            // Reset height after submission
+                            if (inputRef.current) {
+                                inputRef.current.style.height = 'auto';
+                            }
+                        } else {
+                            handleKeyDown(e);
+                        }
+                    }}
                     autoFocus
+                    rows={1} // Start with 1 row
                 />
             </div>
             {justCleared && <div style={{ height: '85vh' }}></div>}

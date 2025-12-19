@@ -8,6 +8,8 @@ function App() {
     const [view, setView] = useState('intro'); // 'intro', 'terminal', 'gui', 'gallery'
     const [lastView, setLastView] = useState('terminal'); // To return from gallery
 
+    const [galleryTargetId, setGalleryTargetId] = useState(null); // For direct terminal access
+
     const handleIntroComplete = () => {
         setView('terminal'); // Default to Terminal
     };
@@ -21,6 +23,13 @@ function App() {
     };
 
     const switchToGallery = () => {
+        setGalleryTargetId(null);
+        setLastView(view);
+        setView('gallery');
+    };
+
+    const switchToGalleryWithImage = (imageId) => {
+        setGalleryTargetId(imageId);
         setLastView(view);
         setView('gallery');
     };
@@ -36,8 +45,14 @@ function App() {
 
             {view === 'intro' && <Intro onComplete={handleIntroComplete} />}
 
-            {view === 'terminal' && (
-                <Terminal onSwitchToGUI={switchToGUI} />
+            {view !== 'intro' && (
+                <div style={{ display: view === 'terminal' ? 'block' : 'none' }}>
+                    <Terminal
+                        onSwitchToGUI={switchToGUI}
+                        onOpenImage={switchToGalleryWithImage}
+                        isActive={view === 'terminal'}
+                    />
+                </div>
             )}
 
             {view === 'gui' && (
@@ -48,7 +63,10 @@ function App() {
             )}
 
             {view === 'gallery' && (
-                <Gallery onBack={backFromGallery} />
+                <Gallery
+                    onBack={backFromGallery}
+                    initialTargetId={galleryTargetId}
+                />
             )}
         </div>
     );
