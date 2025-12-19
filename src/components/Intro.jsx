@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { resumeData } from '../data/resume';
 
 const Intro = ({ onComplete }) => {
     const [text, setText] = useState('');
@@ -31,6 +32,9 @@ const Intro = ({ onComplete }) => {
     return (
         <div className="intro-container">
             <pre className="intro-text">{text}<span className="cursor">_</span></pre>
+            <footer className="intro-footer">
+                <p>© {new Date().getFullYear()} {resumeData.name}. Built with Love.</p>
+            </footer>
         </div>
     );
 };

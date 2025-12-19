@@ -720,3 +720,41 @@ html {
         font-size: 0.85rem;
     }
 }
+/* Intro Component Styles */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.intro-footer {
+    position: absolute;
+    bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    opacity: 0.7;
+}
+
+/* Terminal Page Container */
+.terminal-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.terminal-footer {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    opacity: 0.7;
+}

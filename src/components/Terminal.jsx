@@ -288,37 +288,42 @@ help        - Show this help message`
     };
 
     return (
-        <div className="terminal-wrapper" onClick={handleContainerClick}>
-            <Output output={output} />
-            <div className="input-area">
-                <span className="prompt-label">{prompt}</span>
-                <textarea
-                    ref={inputRef}
-                    className="terminal-input"
-                    value={input}
-                    onChange={(e) => {
-                        setInput(e.target.value);
-                        e.target.style.height = 'auto'; // Reset height to recalculate
-                        e.target.style.height = e.target.scrollHeight + 'px'; // Set to scrollHeight
-                    }}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter' && !e.shiftKey) {
-                            e.preventDefault();
-                            handleCommand(input);
-                            // Reset height after submission
-                            if (inputRef.current) {
-                                inputRef.current.style.height = 'auto';
+        <div className="terminal-page">
+            <div className="terminal-wrapper" onClick={handleContainerClick}>
+                <Output output={output} />
+                <div className="input-area">
+                    <span className="prompt-label">{prompt}</span>
+                    <textarea
+                        ref={inputRef}
+                        className="terminal-input"
+                        value={input}
+                        onChange={(e) => {
+                            setInput(e.target.value);
+                            e.target.style.height = 'auto'; // Reset height to recalculate
+                            e.target.style.height = e.target.scrollHeight + 'px'; // Set to scrollHeight
+                        }}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                                e.preventDefault();
+                                handleCommand(input);
+                                // Reset height after submission
+                                if (inputRef.current) {
+                                    inputRef.current.style.height = 'auto';
+                                }
+                            } else {
+                                handleKeyDown(e);
                             }
-                        } else {
-                            handleKeyDown(e);
-                        }
-                    }}
-                    autoFocus
-                    rows={1} // Start with 1 row
-                />
+                        }}
+                        autoFocus
+                        rows={1} // Start with 1 row
+                    />
+                </div>
+                {justCleared && <div style={{ height: '85vh' }}></div>}
+                <div ref={bottomRef} />
             </div>
-            {justCleared && <div style={{ height: '85vh' }}></div>}
-            <div ref={bottomRef} />
+            <footer className="terminal-footer">
+                <p>© {new Date().getFullYear()} {resumeData.name}. Built with Love.</p>
+            </footer>
         </div>
     );
 };
