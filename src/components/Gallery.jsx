@@ -3,6 +3,7 @@ import { resumeData } from '../data/resume';
 
 const Gallery = ({ onBack, initialTargetId }) => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
         if (initialTargetId) {
@@ -13,6 +14,16 @@ const Gallery = ({ onBack, initialTargetId }) => {
         }
     }, [initialTargetId]);
 
+    const handleImageClick = (item) => {
+        setImageLoaded(false);
+        setSelectedImage(item);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+        setImageLoaded(false);
+    };
+
     return (
         <div className="gallery-page professional-theme">
             <header className="gallery-header">
@@ -22,7 +33,7 @@ const Gallery = ({ onBack, initialTargetId }) => {
 
             <div className="gallery-grid">
                 {resumeData.gallery.map((item, index) => (
-                    <div key={index} className="gallery-item" onClick={() => setSelectedImage(item)}>
+                    <div key={index} className="gallery-item" onClick={() => handleImageClick(item)}>
                         <div className="img-wrapper">
                             <span className="gallery-date-overlay">{item.date}</span>
                             <img src={item.src} alt={item.title} loading="lazy" />
@@ -35,11 +46,19 @@ const Gallery = ({ onBack, initialTargetId }) => {
             </div>
 
             {selectedImage && (
-                <div className="lightbox" onClick={() => setSelectedImage(null)}>
+                <div className="lightbox" onClick={handleCloseModal}>
                     <div className="lightbox-wrapper" onClick={e => e.stopPropagation()}>
-                        <button className="close-btn" onClick={() => setSelectedImage(null)}>×</button>
+                        <button className="close-btn" onClick={handleCloseModal}>×</button>
                         <div className="lightbox-content">
-                            <img src={selectedImage.src} alt={selectedImage.title} />
+                            {!imageLoaded && (
+                                <div className="lightbox-loading">Loading image...</div>
+                            )}
+                            <img
+                                src={selectedImage.src}
+                                alt={selectedImage.title}
+                                onLoad={() => setImageLoaded(true)}
+                                style={{ display: imageLoaded ? 'block' : 'none' }}
+                            />
                             <div className="lightbox-caption">
                                 <span className="lightbox-date">{selectedImage.date}</span>
                                 <h2>{selectedImage.title}</h2>
