@@ -213,6 +213,18 @@ export const resumeData = {
     ],
     gallery: [
         {
+            id: "orthopedic-shadow-122625",
+            title: "Shadowing Dr. Robert A. Hymes MD at Inova Orthopedics and Farifax Medical Center",
+            date: "Dec 18, 2025 & Dec 26, 2025",
+            description: 'Over 15.5 hours across two sessions (December 18 and 26, 2025), I shadowed Dr. Robert A Hymes, an orthopedic surgeon, at Inova Orthopedics: first in clinic (not pictured), then in the OR. The clinic day showed me how orthopedic surgeons make treatment decisions based on quality of life rather than just fixing every injury, which was, to say, a different perspective than I expected. Then on the OR day, I followed both Dr. Robert A Hymes and Dr. Yong Seon Lee (not pictured), an orthopedic surgery resident, through three cases at Inova Fairfax Hospital. Started with morning rounds where residents presented cases to attendings, then scrubbed in to observe a right knee washout, hardware removal from a pelvis (plates and screws from a car accident) and a wrist fracture repair. It was super interesting to see the OR team dynamic (surgeons, residents, nurses, anesthesia) all working together while Dr. Hymes taught throughout the procedures. As an EMT, it was especially cool to see the surgical side of injuries I have helped patients for. As a sidenote: both Dr. Yong and Dr. Hymes confirmed the "Ortho Bro" stereotype is real, which honestly makes the field seem even more appealing. I’m heavily considering ortho now, so overall, a great experience.',
+            images: [
+                "/gallery/orthoShadow122625/meAndHymes.jpeg",
+                "/gallery/orthoShadow122625/orthoRounds.jpeg",
+                "/gallery/orthoShadow122625/meInScrubs.jpeg",
+                "/gallery/orthoShadow122625/orthoOR.jpeg"
+            ]
+        },
+        {
             id: "neurology-shadow-121525",
             title: "Shadowing Dr. W Alex Dalrymple MD at the UVA Health Neurology Clinic",
             date: "Dec 15, 2025",

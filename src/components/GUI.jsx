@@ -5,6 +5,10 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
     const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const handleScroll = () => {
             // Check if we are at the bottom of the page
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
@@ -60,16 +64,17 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                         </div>
                     </div>
                 </div>
-                <nav className="gui-nav">
-                    <a href="#education" className={activeSection === 'education' ? 'active' : ''}>Education</a>
-                    <a href="#research" className={activeSection === 'research' ? 'active' : ''}>Research</a>
-                    <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a>
-                    <a href="#leadership" className={activeSection === 'leadership' ? 'active' : ''}>Leadership</a>
-                    <a href="#volunteering" className={activeSection === 'volunteering' ? 'active' : ''}>Volunteering</a>
-                    <a href="#work" className={activeSection === 'work' ? 'active' : ''}>Work</a>
-                    <a href="#awards" className={activeSection === 'awards' ? 'active' : ''}>Awards</a>
-                </nav>
             </header>
+
+            <nav className="gui-nav">
+                <a href="#education" className={activeSection === 'education' ? 'active' : ''}>Education</a>
+                <a href="#research" className={activeSection === 'research' ? 'active' : ''}>Research</a>
+                <a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a>
+                <a href="#leadership" className={activeSection === 'leadership' ? 'active' : ''}>Leadership</a>
+                <a href="#volunteering" className={activeSection === 'volunteering' ? 'active' : ''}>Volunteering</a>
+                <a href="#work" className={activeSection === 'work' ? 'active' : ''}>Work</a>
+                <a href="#awards" className={activeSection === 'awards' ? 'active' : ''}>Awards</a>
+            </nav>
 
             <main className="gui-content">
                 <section id="education" className="gui-section">
@@ -227,7 +232,10 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                     <div className="gallery-preview-grid">
                         {resumeData.gallery.slice(0, 4).map((item, index) => (
                             <div key={index} className="preview-item">
-                                <img src={item.src} alt={item.title} />
+                                <img
+                                    src={item.src || (item.images && item.images[0])}
+                                    alt={item.title}
+                                />
                             </div>
                         ))}
                     </div>

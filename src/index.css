@@ -74,24 +74,14 @@ html {
 
 .gui-header {
     max-width: 1000px;
-    margin: 0 auto 60px;
-    border-bottom: 1px solid var(--border-color);
+    margin: 0 auto 20px;
     padding-bottom: 10px;
     padding-top: 20px;
-    /* Add padding for sticky state */
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
     gap: 20px;
-    position: sticky;
-    top: 0;
-    background: rgba(15, 23, 42, 0.95);
-    /* Semi-transparent background */
-    backdrop-filter: blur(8px);
-    /* Blur effect */
-    z-index: 100;
-    transition: padding 0.3s;
 }
 
 .gui-title {
@@ -174,10 +164,20 @@ html {
     gap: 20px;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(51, 65, 85, 0.5);
+    padding: 15px 20px;
+    margin-bottom: 30px;
     overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+    /* Ensure nav aligns with content width if user has wide screen */
+    max-width: 1000px;
+    /* Optional: if we want it strictly constrained like content */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gui-nav a,
@@ -226,7 +226,7 @@ html {
 
 .gui-section {
     margin-bottom: 80px;
-    scroll-margin-top: 220px;
+    scroll-margin-top: 80px;
     /* Increased offset for sticky header */
 }
 
@@ -483,6 +483,83 @@ html {
     color: white;
     font-size: 2rem;
     cursor: pointer;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.carousel-nav:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+.carousel-nav-prev {
+    left: 10px;
+}
+
+.carousel-nav-next {
+    right: 10px;
+}
+
+/* Carousel Indicators (Dots) */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: var(--text-secondary);
+}
+
+.carousel-dot.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* Carousel Badge on Gallery Thumbnail */
+.gallery-carousel-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--accent-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    z-index: 5;
+    font-family: var(--font-mono);
+    border: 1px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 /* Gallery Preview */
@@ -759,6 +836,7 @@ html {
     font-family: var(--font-mono);
     opacity: 0.7;
 }
+
 /* Lightbox Loading State */
 .lightbox-loading {
     display: flex;
