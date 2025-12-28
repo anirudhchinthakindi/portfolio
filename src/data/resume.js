@@ -101,8 +101,8 @@ export const resumeData = {
                     details: "Manage budgeting, reimbursement, and financial planning for a 200+ member nonprofit with $100k+ annual budget; oversee allocation of funds for conferences, programming, and organizational operations; maintain transparent financial records and ensure compliance with university and nonprofit guidelines. \n Coordinate fundraising initiatives and reimbursements; maintain accurate financial records and support executive leadership in long-term organizational budgeting and strategy."
                 },
                 {
-                    role: "Director-General",
-                    organization: "Virginia International Crisis Simulation (VICS)",
+                    role: "Director-General of Virginia International Crisis Simulation (VICS)",
+                    organization: "UVA International Relations Organization",
                     date: "Sep 2025 - Present",
                     details: "Lead planning and execution of UVA's crisis simulation conference; manage staff team and coordinate with faculty advisors; design complex crisis scenarios and conference programming for multi-university participants."
                 },
