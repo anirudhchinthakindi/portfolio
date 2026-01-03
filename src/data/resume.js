@@ -145,18 +145,18 @@ export const resumeData = {
             details: "Positively impact patient experience by providing companionship to patients, reviewing hospital resources, and assisting staff via receptionist/clerical duties at nurses' station."
         },
         {
-            role: "Founder/Tutor",
-            organization: "Chinthakindi STEM Tutoring",
-            location: "McLean, VA",
-            date: "2021 - 2025",
-            details: "Developed and led a free STEM tutoring program for 7 underserved middle school students. Conducted 70+ sessions and improved students' STEM grades by an average of 12% over 4 semesters."
-        },
-        {
             role: "Volunteer",
             organization: "Dementia Art Therapy Alliance @ The Colonades",
             location: "Charlottesville, VA",
             date: "Nov 2025 - Present",
             details: "Lead art-therapy activities for residents with dementia to support emotional well-being and cognitive engagement. Build supportive relationships and adapt activities to individual needs. Collaborate with staff and the Dementia Art Therapy Alliance to create inclusive, calming, and meaningful experiences."
+        },
+        {
+            role: "Founder/Tutor",
+            organization: "Chinthakindi STEM Tutoring",
+            location: "McLean, VA",
+            date: "2021 - 2025",
+            details: "Developed and led a free STEM tutoring program for 7 underserved middle school students. Conducted 70+ sessions and improved students' STEM grades by an average of 12% over 4 semesters."
         },
         {
             role: "Chantilly Group Home Volunteer",
