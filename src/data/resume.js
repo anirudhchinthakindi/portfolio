@@ -72,7 +72,8 @@ export const resumeData = {
                 "Analyzed 500+ fMRI scans and built automated Python pipelines for multi-metric functional connectivity, adjacency-matrix generation, dynamic FC, and graph analysis across ECTRO1 and REST-meta-MDD datasets.",
                 "Applied machine learning (Random Forest, XGBoost, SVM) for experimental classification and ECT responder prediction.",
                 "Created a 3D brain modeling library, optimized workflows, and created interactive heatmap/atlas comparison tools.",
-                "Authored 2 internal posters, a paper under review, and presented at MGH Neuroscience Day; assisted with fMRI scan patient preparation."
+                "Authored 2 internal posters, a paper under review, and presented at MGH Neuroscience Day; assisted with fMRI scan patient preparation.",
+                "Investigating dimensional symptom trajectories and early predictors of ECT treatment response in treatment-resistant depression, with focus on affect dissociation, suicidality, and measurement concordance across clinical scales."
             ]
         },
         {
