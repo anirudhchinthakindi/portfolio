@@ -108,10 +108,19 @@ export const resumeData = {
                     details: "Lead planning and execution of UVA's crisis simulation conference; manage staff team and coordinate with faculty advisors; design complex crisis scenarios and conference programming for multi-university participants."
                 },
                 {
-                    role: "Model UN Team Competitor",
-                    organization: "UVA International Relations Organization",
-                    date: "Sep 2025 - Present",
-                    details: "Represent UVA at intercollegiate Model UN conferences; conduct research on international policy and national positions; engage in diplomatic negotiation, coalition-building, and resolution drafting."
+                    organization: "UVA Model UN Team",
+                    roles: [
+                        {
+                            role: "Director of Crisis Training",
+                            date: "Dec 2026 - Present",
+                            details: "Lead training and development of Crisis Delegates through weekly practice sessions, Mock MUN organization, and one-on-one conference preparation meetings with Crisis & Specialized Delegates."
+                        },
+                        {
+                            role: "Model UN Team Competitor",
+                            date: "Sep 2025 - Present",
+                            details: "Represent UVA at intercollegiate Model UN conferences; conduct research on international policy and national positions; engage in diplomatic negotiation, coalition-building, and resolution drafting."
+                        }
+                    ]
                 }
             ]
         },
