@@ -155,12 +155,33 @@ const GUI = ({ onSwitchToTerminal, onSwitchToGallery }) => {
                                             <span className="date">{item.location}</span>
                                         </div>
                                         {item.roles.map((role, rIndex) => (
-                                            <div key={rIndex} className="role-block" style={{ marginTop: rIndex > 0 ? '20px' : '10px', borderTop: rIndex > 0 ? '1px solid var(--border-color)' : 'none', paddingTop: rIndex > 0 ? '15px' : '0' }}>
-                                                <div className="card-header" style={{ marginBottom: '5px' }}>
-                                                    <h4 style={{ margin: 0, color: 'var(--accent-color)' }}>{role.role}</h4>
-                                                    <span className="date">{role.date}</span>
-                                                </div>
-                                                <p style={{ margin: '5px 0 0 0', fontSize: '0.95rem' }}>{role.details}</p>
+                                            <div key={rIndex}>
+                                                {role.roles ? (
+                                                    <div className="role-block" style={{ marginTop: rIndex > 0 ? '20px' : '10px', borderTop: rIndex > 0 ? '1px solid var(--border-color)' : 'none', paddingTop: rIndex > 0 ? '15px' : '0' }}>
+                                                        <div className="card-header" style={{ marginBottom: '10px' }}>
+                                                            <h4 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.1rem' }}>{role.organization}</h4>
+                                                        </div>
+                                                        <div style={{ paddingLeft: '20px', borderLeft: '2px solid var(--accent-light)' }}>
+                                                            {role.roles.map((subRole, srIndex) => (
+                                                                <div key={srIndex} style={{ marginTop: srIndex > 0 ? '15px' : '0' }}>
+                                                                    <div className="card-header" style={{ marginBottom: '5px' }}>
+                                                                        <h4 style={{ margin: 0, color: 'var(--accent-color)' }}>{subRole.role}</h4>
+                                                                        <span className="date">{subRole.date}</span>
+                                                                    </div>
+                                                                    <p style={{ margin: '5px 0 0 0', fontSize: '0.95rem' }}>{subRole.details}</p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className="role-block" style={{ marginTop: rIndex > 0 ? '20px' : '10px', borderTop: rIndex > 0 ? '1px solid var(--border-color)' : 'none', paddingTop: rIndex > 0 ? '15px' : '0' }}>
+                                                        <div className="card-header" style={{ marginBottom: '5px' }}>
+                                                            <h4 style={{ margin: 0, color: 'var(--accent-color)' }}>{role.role}</h4>
+                                                            <span className="date">{role.date}</span>
+                                                        </div>
+                                                        <p style={{ margin: '5px 0 0 0', fontSize: '0.95rem' }}>{role.details}</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         ))}
                                     </>

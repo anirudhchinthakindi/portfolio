@@ -54,9 +54,15 @@ Type 'help' to see available commands. Type 'gui' to switch to the main website.
                     'leadership.txt': {
                         type: 'file', content: resumeData.leadership.map(item => {
                             if (item.roles) {
-                                const rolesText = item.roles.map(r =>
-                                    `  - ${r.role} (${r.date})\n    ${r.details}`
-                                ).join('\n');
+                                const rolesText = item.roles.map(r => {
+                                    if (r.roles) {
+                                        const subRolesText = r.roles.map(sr =>
+                                            `    - ${sr.role} (${sr.date})\n      ${sr.details}`
+                                        ).join('\n');
+                                        return `  + ${r.organization}\n${subRolesText}`;
+                                    }
+                                    return `  - ${r.role} (${r.date})\n    ${r.details}`;
+                                }).join('\n');
                                 return `${item.organization} [${item.location}]\n${rolesText}`;
                             }
                             return `[${item.date}] ${item.role} @ ${item.organization}\n  ${item.details}`;

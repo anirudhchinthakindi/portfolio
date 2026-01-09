@@ -234,7 +234,7 @@ export const resumeData = {
             title: "Neurosurgery Shadowing at Inova Fairfax Hospital",
             date: "Jan 9, 2026",
             description: "I spent over 8 hours today, on January 9, 2026, shadowing Dr. Shenai at Inova Neurosurgery's outpatient clinic. He sees mainly spine patients (lumbar issues, herniations, leg pain/numbness) along with brain tumors, and what stood out most was his approach to patient care; it was really different from what I'd seen before from surgeons. He'd spend a lot of time building rapport with patients, finding common ground (sports, kids, shared experiences), and explaining his clinical reasoning step-by-step using analogies to make complex concepts understandable. For one patient with spinal fluid issues between L2-L3, instead of jumping to whatever previous doctors recommended, he ordered an EMG first to actually identify the root cause. Got lunch with him in between and had a good conversation about medicine, his path to neurosurgery, and his work as a concussion specialist for the Ravens and Commanders. This experience really clarified something important for me: I'd want to practice more like Dr. Shenai in terms of patient communication, but I also realized I really want to be in the OR doing surgery, not just seeing clinic patients.",
-            src: "neurosurgery-shadow-010926.jpeg"
+            src: "/gallery/neurosurgeryShadow010926.jpeg"
         },
         {
             id: "orthopedic-shadow-122625",
