@@ -155,6 +155,13 @@ export const resumeData = {
             details: "Positively impact patient experience by providing companionship to patients, reviewing hospital resources, and assisting staff via receptionist/clerical duties at nurses' station."
         },
         {
+            role: "Volunteer Crisis Counselor",
+            organization: "Crisis Textline",
+            location: "Remote",
+            date: "Jan 2026 - Present",
+            details: "Provide real-time emotional support to individuals in crisis via text message, using active listening and de-escalation techniques. Apply crisis intervention training to help texters work through immediate challenges, explore coping strategies, and connect with appropriate resources when needed."
+        },
+        {
             role: "Volunteer",
             organization: "Dementia Art Therapy Alliance @ The Colonades",
             location: "Charlottesville, VA",
@@ -222,6 +229,13 @@ export const resumeData = {
         }
     ],
     gallery: [
+        {
+            id: "neurosurgery-shadow-010926",
+            title: "Neurosurgery Shadowing at Inova Fairfax Hospital",
+            date: "Jan 9, 2026",
+            description: "I spent over 8 hours today, on January 9, 2026, shadowing Dr. Shenai at Inova Neurosurgery's outpatient clinic. He sees mainly spine patients (lumbar issues, herniations, leg pain/numbness) along with brain tumors, and what stood out most was his approach to patient care; it was really different from what I'd seen before from surgeons. He'd spend a lot of time building rapport with patients, finding common ground (sports, kids, shared experiences), and explaining his clinical reasoning step-by-step using analogies to make complex concepts understandable. For one patient with spinal fluid issues between L2-L3, instead of jumping to whatever previous doctors recommended, he ordered an EMG first to actually identify the root cause. Got lunch with him in between and had a good conversation about medicine, his path to neurosurgery, and his work as a concussion specialist for the Ravens and Commanders. This experience really clarified something important for me: I'd want to practice more like Dr. Shenai in terms of patient communication, but I also realized I really want to be in the OR doing surgery, not just seeing clinic patients.",
+            src: "neurosurgery-shadow-010926.jpeg"
+        },
         {
             id: "orthopedic-shadow-122625",
             title: "Shadowing Dr. Robert A. Hymes MD at Inova Orthopedics and Farifax Medical Center",
