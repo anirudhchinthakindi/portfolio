@@ -13,7 +13,7 @@ export const resumeData = {
             date: "Expected Graduation: May 2028",
             details: [
                 "GPA: 4.00",
-                "Relevant Coursework: Genetics and Molecular Biology, Applied Linear Algebra, Editing Genes and Genomes, Medical Sociology"
+                "Relevant Coursework: Genetics and Molecular Biology, Applied Linear Algebra, Editing Genes and Genomes, Statistics for Biologists, Medical Sociology"
             ]
         },
         {
